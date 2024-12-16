@@ -1,0 +1,51 @@
+﻿
+@{
+    Layout = null;
+}
+
+
+<!doctype html>
+<html lang="en" data-bs-theme="auto">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <title>İş Takip Sistemi Giriş</title>
+    <link href="~/Content/bootstrap.rtl.min.css" rel="stylesheet" />
+    <link href="~/Content/sign-in.css" rel="stylesheet" />
+
+</head>
+
+<body class="d-flex align-items-center py-4 bg-body-tertiary">
+    <main class="form-signin w-100 m-auto">
+        @using (Html.BeginForm("Index", "Login", FormMethod.Post))
+        {
+            <!-- begin form tetiklendiği zamanhangi actıon çalışsın ındex,logın controlda form methodu-->
+            <h1 class="h3 mb-3 fw-normal">İş Takip Sistemi Giriş Sayfası</h1>
+            <br />
+            <div class="form-floating">
+                <input type="text" class="form-control" id="kullaniciAd" name="kullaniciAd">
+                <label for="kullaniciAd">Kullanıcı Adınız</label>
+            </div>
+            <br />
+            <div class="form-floating">
+                <input type="password" class="form-control" id="parola" name="parola">
+                <label for="parola">Password</label>
+            </div>
+            <br />
+            <button class="btn btn-primary w-100 py-2" type="submit">Giriş</button>
+            <br /> <br />
+
+            @* <p>@ViewBag.mesaj</p> *@
+            if (ViewBag.mesaj != null)
+            {
+                <div class="alert alert-danger" role="alert">
+                    @ViewBag.mesaj
+                </div>
+
+            }
+        }
+        <!-- ****** beginfrom etiketiyle controlu etkinleştircez buttona bastığımızda formları silip beginformla içerisindeki inputların verilerine erişcez onun içinde post işlemi uygulucaz loginde -->
+    </main>
+</body>
+</html>

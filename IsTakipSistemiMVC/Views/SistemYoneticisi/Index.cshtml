@@ -1,0 +1,48 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutSistemYoneticisi.cshtml";
+}
+
+
+<!-- artık chartjs metotlarını kullabiliriz-->
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutSistemYoneticisi.cshtml";
+}
+
+<!-- artık chartjs metotlarını kullanabiliriz -->
+ <script src="~/Scripts/chart.min.js"></script>
+
+<div class="mt-5">
+    <canvas id="myChart" width="10" height="5"> </canvas>
+</div>
+
+
+<div class="mt-5">
+    <canvas id="myChart" width="10" height="5"></canvas>
+</div>
+
+<script>
+    const ctx = document.getElementById("myChart").getContext("2d");
+
+    const mychart = new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: @Html.Raw(ViewBag.labelBirim),
+            datasets: [{
+                label: 'Birimlerin Toplam İşleri',
+                data: @Html.Raw(ViewBag.dataIs),
+                backgroundColor: [
+                    '#22333b'
+
+                ],
+                borderColor: [
+                    '#0a0900'
+                ],
+                borderWidth: 2
+            }]
+        }
+    })
+</script>

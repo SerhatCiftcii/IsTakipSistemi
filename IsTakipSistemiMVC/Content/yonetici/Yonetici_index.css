@@ -1,0 +1,62 @@
+﻿
+.badge-custom {
+    display: inline-block;
+    margin: 0 5px;
+}
+
+.badge-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.badge-group {
+    display: flex;
+    align-items: center;
+}
+
+.badge-start {
+    flex: 1;
+    display: flex;
+    justify-content: flex-start;
+    margin-left: 50px; /* Sağdan biraz çekme */
+}
+
+.badge-center {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.badge-end {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+}
+/* Liste öğesi arka plan rengi ve metin rengi */
+
+
+/* Badge'ler arasındaki boşluk */
+.badge-custom {
+    margin: 0 5px;
+}
+
+/* Badge'ler için düzenlemeler */
+.badge-group {
+    display: inline-flex;
+    margin-right: 10px;
+}
+body {
+    background-color: #F1F0E8; /* Sayfa arka plan rengi */
+}
+
+.card-header {
+    background-color: #EEE0C9; /* Card header arka plan rengi */
+    color: black; /* Card header metin rengi */
+}
+
+.alert {
+    background-color: #EEE0C9; /* Alert arka plan rengi */
+    color: black; /* Alert metin rengi */
+}

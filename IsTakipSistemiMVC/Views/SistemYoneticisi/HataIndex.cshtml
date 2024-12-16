@@ -1,0 +1,17 @@
+﻿@model IEnumerable<IsTakipSistemiMVC.Models.Loglar>
+@using GridMvc.Html
+@{
+    ViewBag.Title = "HataIndex";
+    Layout = "~/Views/Shared/_LayoutSistemYoneticisi.cshtml";
+}
+
+<div class="container mt-5">
+    @Html.Grid(Model).Columns(column =>
+    {
+        column.Add(m => m.Personeller.personelAdSoyad).Titled("Personel Ad Soyad").Filterable(true);
+        column.Add(m => m.logAciklama).Titled("Açıklama");
+        column.Add(m => m.actionAd).Titled("Action Adı");
+        column.Add(m => m.controllerAd).Titled("Controller Adı");
+        column.Add(m => m.tarih).Titled("Tarih").Sortable(true);
+    }).WithPaging(20) <!-- 20 veri gösterilicek, sayfalama -->
+</div>

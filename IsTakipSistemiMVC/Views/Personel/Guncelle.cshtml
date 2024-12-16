@@ -1,0 +1,39 @@
+﻿@model IsTakipSistemiMVC.Models.Personeller
+
+@{
+    // Yetki türünü ViewBag üzerinden al
+    int yetkiTurId = ViewBag.YetkiTurId != null ? Convert.ToInt32(ViewBag.YetkiTurId) : 0;
+
+    // Yetki türüne göre uygun layout ayarla
+    if (yetkiTurId == 1)
+    {
+        ViewBag.Title = "Yönetici - Güncelle";
+        Layout = "~/Views/Shared/_LayoutYönetici.cshtml"; // Yöneticiye özgü layout // Yöneticiye özgü layout
+    }
+    else if (yetkiTurId == 3)
+    {
+        ViewBag.Title = "Sistem Yöneticisi - Güncelle";
+        Layout = "~/Views/Shared/_LayoutSistemYoneticisi.cshtml"; // Sistem yöneticisine özgü layout
+    }
+    else
+    {
+        // Yetki türü geçersizse veya belirtilmemişse, login sayfasına yönlendirme
+        Response.Redirect("/Login/Index");
+    }
+}
+
+<div class="container mt-5">
+    @using (Html.BeginForm("Guncelle", "Personel", FormMethod.Post, new { @class = "row g-3" }))
+    {
+        <input type="hidden" value="@Model.personelId" name="id" />
+        <div class="col-12">
+            <label for="adSoyad" class="form-label">Personel Ad SOyad</label>
+            <input type="text" class="form-control" id="adSoyad" name="adSoyad" value="@Model.personelAdSoyad" />
+        </div>
+        <div class="col-12">
+            <button class="btn btn-success" type="submit">Personel Güncelle</button>
+
+        </div>
+    }
+</div>
+

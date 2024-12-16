@@ -1,0 +1,200 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="IsTakipDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Birimler">
+    <Key>
+      <PropertyRef Name="birimId" />
+    </Key>
+    <Property Name="birimId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="birimAd" Type="nvarchar" MaxLength="50" />
+    <Property Name="aktiflik" Type="bit" />
+  </EntityType>
+  <EntityType Name="Durumlar">
+    <Key>
+      <PropertyRef Name="durumId" />
+    </Key>
+    <Property Name="durumId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="durumAd" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Isler">
+    <Key>
+      <PropertyRef Name="isId" />
+    </Key>
+    <Property Name="isId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="isBaslik" Type="nvarchar(max)" />
+    <Property Name="isAciklama" Type="nvarchar(max)" />
+    <Property Name="isPersonelId" Type="int" />
+    <Property Name="iletilenTarih" Type="datetime" />
+    <Property Name="yapilanTarih" Type="datetime" />
+    <Property Name="isDurumId" Type="int" />
+    <Property Name="isYorum" Type="nvarchar(max)" />
+    <Property Name="isOkunma" Type="bit" />
+    <Property Name="YapimaBaslama" Type="datetime" />
+    <Property Name="isOkunmaTarihi" Type="datetime" />
+    <Property Name="Image" Type="varbinary(max)" />
+    <Property Name="YapilicakTarih" Type="date" />
+    <Property Name="AciliyetSeviyesi" Type="nvarchar" MaxLength="50" />
+    <Property Name="yapiliyorisYorum" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="Loglar">
+    <Key>
+      <PropertyRef Name="logId" />
+    </Key>
+    <Property Name="logId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="logAciklama" Type="nvarchar(max)" />
+    <Property Name="actionAd" Type="nvarchar" MaxLength="50" />
+    <Property Name="controllerAd" Type="nvarchar" MaxLength="50" />
+    <Property Name="tarih" Type="datetime" />
+    <Property Name="personelId" Type="int" />
+    <Property Name="isHata" Type="bit" />
+  </EntityType>
+  <EntityType Name="Personeller">
+    <Key>
+      <PropertyRef Name="personelId" />
+    </Key>
+    <Property Name="personelId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="personelAdSoyad" Type="nvarchar" MaxLength="50" />
+    <Property Name="personelKullaniciAd" Type="nvarchar" MaxLength="50" />
+    <Property Name="personelParola" Type="nvarchar" MaxLength="50" />
+    <Property Name="personelBirimId" Type="int" />
+    <Property Name="personelYetkiTurId" Type="int" />
+    <Property Name="yeniPersonel" Type="bit" />
+    <Property Name="aktiflik" Type="bit" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="YetkiTurler">
+    <Key>
+      <PropertyRef Name="yetkiTurId" />
+    </Key>
+    <Property Name="yetkiTurId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="yetkiTurAd" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <Association Name="FK_Isler_Durumlar">
+    <End Role="Durumlar" Type="Self.Durumlar" Multiplicity="0..1" />
+    <End Role="Isler" Type="Self.Isler" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Durumlar">
+        <PropertyRef Name="durumId" />
+      </Principal>
+      <Dependent Role="Isler">
+        <PropertyRef Name="isDurumId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Isler_Personeller">
+    <End Role="Personeller" Type="Self.Personeller" Multiplicity="0..1" />
+    <End Role="Isler" Type="Self.Isler" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Personeller">
+        <PropertyRef Name="personelId" />
+      </Principal>
+      <Dependent Role="Isler">
+        <PropertyRef Name="isPersonelId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Loglar_Personeller">
+    <End Role="Personeller" Type="Self.Personeller" Multiplicity="0..1" />
+    <End Role="Loglar" Type="Self.Loglar" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Personeller">
+        <PropertyRef Name="personelId" />
+      </Principal>
+      <Dependent Role="Loglar">
+        <PropertyRef Name="personelId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Personeller_Birimler">
+    <End Role="Birimler" Type="Self.Birimler" Multiplicity="0..1" />
+    <End Role="Personeller" Type="Self.Personeller" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Birimler">
+        <PropertyRef Name="birimId" />
+      </Principal>
+      <Dependent Role="Personeller">
+        <PropertyRef Name="personelBirimId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Personeller_YetkiTurler">
+    <End Role="YetkiTurler" Type="Self.YetkiTurler" Multiplicity="0..1" />
+    <End Role="Personeller" Type="Self.Personeller" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="YetkiTurler">
+        <PropertyRef Name="yetkiTurId" />
+      </Principal>
+      <Dependent Role="Personeller">
+        <PropertyRef Name="personelYetkiTurId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Function Name="fn_diagramobjects" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="int" />
+  <Function Name="sp_alterdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+    <Parameter Name="version" Type="int" Mode="In" />
+    <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+  </Function>
+  <Function Name="sp_creatediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+    <Parameter Name="version" Type="int" Mode="In" />
+    <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+  </Function>
+  <Function Name="sp_dropdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_helpdiagramdefinition" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_helpdiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_renamediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+    <Parameter Name="new_diagramname" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="sp_upgraddiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <EntityContainer Name="IsTakipDBModelStoreContainer">
+    <EntitySet Name="Birimler" EntityType="Self.Birimler" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Durumlar" EntityType="Self.Durumlar" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Isler" EntityType="Self.Isler" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Loglar" EntityType="Self.Loglar" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Personeller" EntityType="Self.Personeller" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="YetkiTurler" EntityType="Self.YetkiTurler" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_Isler_Durumlar" Association="Self.FK_Isler_Durumlar">
+      <End Role="Durumlar" EntitySet="Durumlar" />
+      <End Role="Isler" EntitySet="Isler" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Isler_Personeller" Association="Self.FK_Isler_Personeller">
+      <End Role="Personeller" EntitySet="Personeller" />
+      <End Role="Isler" EntitySet="Isler" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Loglar_Personeller" Association="Self.FK_Loglar_Personeller">
+      <End Role="Personeller" EntitySet="Personeller" />
+      <End Role="Loglar" EntitySet="Loglar" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Personeller_Birimler" Association="Self.FK_Personeller_Birimler">
+      <End Role="Birimler" EntitySet="Birimler" />
+      <End Role="Personeller" EntitySet="Personeller" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Personeller_YetkiTurler" Association="Self.FK_Personeller_YetkiTurler">
+      <End Role="YetkiTurler" EntitySet="YetkiTurler" />
+      <End Role="Personeller" EntitySet="Personeller" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

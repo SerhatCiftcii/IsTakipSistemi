@@ -1,0 +1,22 @@
+﻿@model Exception
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+
+    <link href="~/Content/bootstrap.rtl.min.css" rel="stylesheet" />
+</head>
+<body class="container mt-5">
+    <div class="h-100 p-5 text-white bg-dark rounded-5" >
+        <h2> Bir Hata Oluştu</h2>
+      <p> @Model.Message</p>
+        @Html.ActionLink("Login Sayfası", "Index", "Login", new {},new {@class="btn btn-outline-light"})
+    </div>
+</body>
+</html>

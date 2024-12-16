@@ -1,0 +1,47 @@
+﻿@model IsTakipSistemiMVC.Models.Personeller
+
+@{
+    // Yetki türünü ViewBag üzerinden al
+    int yetkiTurId = ViewBag.YetkiTurId != null ? Convert.ToInt32(ViewBag.YetkiTurId) : 0;
+
+    // Yetki türüne göre uygun layout ayarla
+    if (yetkiTurId == 1)
+    {
+        ViewBag.Title = "Yönetici - Pasif";
+        Layout = "~/Views/Shared/_LayoutYönetici.cshtml"; // Yöneticiye özgü layout // Yöneticiye özgü layout
+    }
+    else if (yetkiTurId == 3)
+    {
+        ViewBag.Title = "Sistem Yöneticisi - Sil";
+        Layout = "~/Views/Shared/_LayoutSistemYoneticisi.cshtml"; // Sistem yöneticisine özgü layout
+    }
+    else
+    {
+        // Yetki türü geçersizse veya belirtilmemişse, login sayfasına yönlendirme
+        Response.Redirect("/Login/Index");
+    }
+}
+<div class="container mt-5">
+    @using (Html.BeginForm("Pasif", "Personel", FormMethod.Post))
+    {
+        <!-- Personel bilgilerien erişmek için hiiden ınput kullancaz sil[httpost için] -->
+        @Html.HiddenFor(m => m.personelId)
+        <div class="h-10 p-5 text-dark bg-light rounded-3">
+            <h2>@Model.personelAdSoyad isimli personel Pasif alınıcak </h2>
+            <div class="row g-3 text-center fw-bold ">
+                <h3 style="color:red"> Emin misiniz?</h3>
+            </div>
+
+            <div class="row g-3 text-center">
+                <div class="col">
+                    <button class="btn btn-danger col-4" type="submit">Pasif</button>
+                </div>
+                <div class="col">
+                    @Html.ActionLink("Vazgeç", "Index", "Personel", new { }, new { @class = "btn btn-warning col-4" })
+                </div>
+            </div>
+        </div>
+    }
+
+</div>
+

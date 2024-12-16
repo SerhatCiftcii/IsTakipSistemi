@@ -1,0 +1,58 @@
+﻿@model IsTakipSistemiMVC.Models.BirimYetkiTurler
+@{
+    ViewBag.Title = "Olustur";
+    Layout = "~/Views/Shared/_LayoutYönetici.cshtml";
+}
+
+<div class="container mt-5">
+
+    @using (Html.BeginForm("Olustur", "Personel", FormMethod.Post, new { @class = "row g-3" }))
+    {
+
+
+        <div class="col-12">
+            <label class="form-label" for="adSoyad">Personel Ad Soyad</label>
+            <input type="text" class="form-control" id="adSoyad" name="adSoyad" />
+        </div>
+        <div class="col-md-6">
+            <label class="form-label" for="kullaniciAd">Kullanıcı Ad</label>
+            <input type="text" class="form-control" id="kullaniciAd" name="kullaniciAd" />
+        </div>
+        <div class="col-md-6">
+            <label class="form-label" for="parola">Parola</label>
+            <input type="text" class="form-control" id="parola" name="parola" />
+        </div>
+        <div class="col-md-6">
+            <label class="form-label" for="birim">Birimi</label>
+            <select id="birim" class="form-select" name="birim">
+                @foreach (var item in Model.birimlerList)
+                {
+                    <option value="@item.birimId">@item.birimAd</option>
+                }
+            </select>
+        </div>
+        <div class="col-md-6">
+            <label class="form-label" for="yetkiTur">Yetki Türü</label>
+            <select id="yetkiTur" class="form-select" name="yetkiTur">
+                @foreach (var item in Model.yetkiTurlerList)
+                {
+                    <option value="@item.yetkiTurId">@item.yetkiTurAd</option>
+                }
+            </select>
+        </div>
+        <div class="col-12">
+            <button type="submit" class="btn btn-primary">Personel Ekle</button>
+        </div>
+
+        <br /> <br />
+
+        if (ViewBag.mesaj != null)
+        {
+            <div class="alert alert-danger" role="alert">
+                @ViewBag.mesaj
+            </div>
+        }
+    }
+
+</div>
+

@@ -1,0 +1,61 @@
+﻿@model IEnumerable<IsTakipSistemiMVC.Models.Personeller>
+@using GridMvc.Html
+
+@{//ViewBag.YetkiTurId değişkeni null değilse, onun değerini int türüne çevirir ve yetkiTurId
+    // Yetki türünü ViewBag üzerinden al
+    int yetkiTurId = ViewBag.YetkiTurId != null ? Convert.ToInt32(ViewBag.YetkiTurId) : 0;
+
+    // Yetki türüne göre uygun layout ayarla
+    if (yetkiTurId == 1)
+    {
+        ViewBag.Title = "Yönetici - Personel Listesi";
+        Layout = "~/Views/Shared/_LayoutYönetici.cshtml"; // Yöneticiye özgü layout
+    }
+    else if (yetkiTurId == 3)
+    {
+        ViewBag.Title = "Sistem Yöneticisi - Personel Listesi";
+        Layout = "~/Views/Shared/_LayoutSistemYoneticisi.cshtml"; // Sistem yöneticisine özgü layout
+    }
+    else
+    {
+        // Yetki türü geçersizse veya belirtilmemişse, login sayfasına yönlendirme
+        Response.Redirect("/Login/Index");
+    }
+}
+<div class="container mt-4">
+
+    <div class="mb-4">
+        @Html.ActionLink("Yeni Personel Ekle", "Olustur", "Personel", new { }, new { @class = "btn btn-primary" })
+    </div>
+
+
+    @Html.Grid(Model).Columns(column =>
+{
+    column.Add(m => m.personelAdSoyad).Titled("Personel Ad Soyad").Sortable(true).Filterable(true);
+    column.Add(m => m.Birimler.birimAd).Titled("Birim Ad").Filterable(true);
+    // Aktiflik sütunu: true/false değerlerini Aktif/Pasif olarak göstermek için.
+    column.Add(m => m.aktiflik)
+        .Titled("Aktif")
+        .Filterable(true)
+        .RenderValueAs(o => o.aktiflik.HasValue && o.aktiflik.Value ? "Aktif" : "Pasif");
+    column.Add(m => m.YetkiTurler.yetkiTurAd).Titled("Yetki Tür Ad").Filterable(true);
+    //sütün ozelliklerini belirliyoruz personel güncelleme için
+    column.Add()
+    .Encoded(false)
+    .Sanitized(false)
+    .SetWidth(30)
+    .RenderValueAs(o => Html.ActionLink("Güncelle", "Guncelle", "Personel", new { id = o.personelId }, new { @class = "btn btn-success" }));
+    column.Add()
+ .Encoded(false)
+ .Sanitized(false)
+ .SetWidth(30)
+ .RenderValueAs(o => Html.ActionLink("Pasif", "Pasif", "Personel", new { id = o.personelId }, new { @class = "btn btn-danger" }));
+    column.Add()
+    .Encoded(false)
+.Sanitized(false)
+.SetWidth(30)
+.RenderValueAs(o => Html.ActionLink("Aktif", "Aktif", "Personel", new { id = o.personelId }, new { @class = "btn btn-primary" }));
+}).WithPaging(50)
+
+</div>
+

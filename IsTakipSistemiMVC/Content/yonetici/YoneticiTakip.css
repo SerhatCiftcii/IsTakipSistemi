@@ -1,0 +1,49 @@
+﻿body {
+    background-color: #F1F0E8;
+}
+
+.card-header {
+    background-color: #EEE0C9; /* Card header arka plan rengi */
+    color: black; /* Card header metin rengi */
+}
+
+.img-thumbnail {
+    cursor: pointer; /* Fotoğrafın üzerine gelindiğinde işaretçi değişir */
+    max-width: 100px; /* Önizleme resminin genişliğini ayarlayın */
+    height: auto; /* Yüksekliği orantılı tutun */
+}
+
+.img-large {
+    display: none; /* Büyük resmi başlangıçta gizle */
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.8); /* Arka plan rengini koyulaştır */
+    margin: auto;
+    z-index: 1000; /* Resmi üstte göstermek için */
+    padding: 20px;
+    text-align: center;
+}
+
+    .img-large img {
+        max-width: 90%;
+        max-height: 90vh; /* Yüksekliği ekran yüksekliği kadar sınırla */
+        margin: auto;
+        display: block;
+    }
+
+    .img-large .close {
+        position: absolute;
+        top: 10px;
+        right: 20px;
+        font-size: 2rem;
+        color: white;
+        cursor: pointer;
+    }
+
+
+
+        
+

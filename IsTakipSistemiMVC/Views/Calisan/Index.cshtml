@@ -1,0 +1,123 @@
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutCalisan.cshtml";
+}
+
+<head>
+    <style>
+        body {
+            background-color: #F1F0E8; /* Sayfa arka plan rengi */
+        }
+
+        .card-header {
+            background-color: #EEE0C9; /* Card header arka plan rengi */
+            color: black; /* Card header metin rengi */
+        }
+
+        .alert {
+            background-color: #EEE0C9; /* Alert arka plan rengi */
+            color: black; /* Alert metin rengi */
+        }
+
+      
+        .badge-custom-align {
+            transform: translateX(-300px);
+        }
+    
+</head>
+
+
+<!-- Sayısal Gösterim -->
+<style>
+    .badge-custom-align {
+        transform: translateX(-10px);
+    }
+</style>
+
+    <div class="container mt-4">
+        <div class="row">
+            <div class="col-md-12">
+                <ul class="list-group">
+                    <li class="list-group-item d-flex align-items-center" style="background-color: #EEE0C9; color: black">
+                        <strong>İş Durumları</strong>
+                    </li>
+                    <li class="list-group-item d-flex">
+                        <div class="col-8">
+                            <strong>Okunmayı Bekleyen İş Sayısı</strong>
+                        </div>
+                        <div class="col-4 d-flex justify-content-center badge-custom-align">
+                            <span class="badge bg-secondary  rounded-pill badge-custom">@ViewBag.OkunmayanIsSayisi</span>
+                        </div>
+                    </li>
+                    <li class="list-group-item d-flex">
+                        <div class="col-8">
+                            <strong>Toplam Okunan İş Sayısı</strong>
+                        </div>
+                        <div class="col-4 d-flex justify-content-center badge-custom-align">
+                            <span class="badge bg-success rounded-pill badge-custom">@ViewBag.OkunanIsSayisi</span>
+                        </div>
+                    </li>
+                    <li class="list-group-item d-flex">
+                        <div class="col-8">
+                            <strong>Yapılıyor durumundaki iş sayısı</strong>
+                        </div>
+                        <div class="col-4 d-flex justify-content-center badge-custom-align">
+                            <span class="badge bg-warning  rounded-pill badge-custom">@ViewBag.YapilacakIsSayisi</span>
+                        </div>
+                    </li>
+                    <li class="list-group-item d-flex">
+                        <div class="col-8">
+                            <strong>Toplam Tamamlanan İş Sayısı</strong>
+                        </div>
+                        <div class="col-4 d-flex justify-content-center badge-custom-align">
+                            <span class="badge bg-primary rounded-pill badge-custom">@ViewBag.TamamlananIsSayisi</span>
+                        </div>
+                    </li>
+                    <li class="list-group-item d-flex">
+                        <div class="col-8">
+                            <strong>Bitim Tarihi Geçmiş İş Sayısı</strong>
+                        </div>
+                        <div class="col-4 d-flex justify-content-center badge-custom-align">
+                            <span class="badge bg-danger  rounded-pill badge-custom">@ViewBag.bitimTarihGecmis</span>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+
+<!-- ApexCharts Grafik Gösterimi -->
+    <div id="chart" style="max-width: 800px; margin: 35px auto;"></div>
+
+
+
+<!-- ApexCharts Kütüphanesi -->
+<script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+<script>
+    // Grafik verilerini tanımlama
+    var options = {
+        series: [@ViewBag.YapilacakIsSayisi, @ViewBag.OkunanIsSayisi, @ViewBag.TamamlananIsSayisi, @ViewBag.OkunmayanIsSayisi, @ViewBag.bitimTarihGecmis],
+        chart: {
+            width: 740,
+            type: 'pie',
+        },
+        labels: ['Yapılıyor durumunda olan iş sayısı', 'Toplam Okunan İşler', 'Toplam Tamamlanan İşler', 'Okunmayı Bekleyen İşler', 'Bitim Tarihi Geçmiş İşler'],
+        colors: ['#FFC107', '#28A745', '#007BFF', '#6C757D', '#FF0000'], // Sarı, Yeşil, Mavi, Gri, Kırmızı renkler
+        responsive: [{
+            breakpoint: 480,
+            options: {
+                chart: {
+                    width: 300
+                },
+                legend: {
+                    position: 'bottom'
+                }
+            }
+        }]
+    };
+
+    // Grafiği oluşturma
+    var chart = new ApexCharts(document.querySelector("#chart"), options);
+    chart.render();
+</script>

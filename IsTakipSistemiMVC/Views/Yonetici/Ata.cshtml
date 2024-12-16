@@ -1,0 +1,64 @@
+﻿@{
+    ViewBag.Title = "Ata";
+    Layout = "~/Views/Shared/_LayoutYönetici.cshtml";
+}
+<link href="~/Content/yonetici/Yonetici_ındex.css" rel="stylesheet" />
+<div class="container mt-4">
+    <div class="card">
+        <div class="card-header text-center fw-bold" style="background-color: #EEE0C9;">
+            <span class="text-dark fw-bold">@ViewBag.birimAd Birimi İçin İş Atama İşlemi</span>
+        </div>
+        <div class="card-body">
+            @using (Html.BeginForm("Ata", "Yonetici", FormMethod.Post))
+            {
+                <div class="mb-2">
+                    <label for="isBaslik" class="form-label"><strong>İş Başlığını Giriniz</strong></label>
+                    <input type="text" class="form-control" id="isBaslik" name="isBaslik" required>
+                </div>
+                <div class="mb-2">
+                    <label for="isAciklama" class="form-label"><strong>İş Açıklamasını Giriniz</strong></label>
+                    <input type="text" class="form-control" id="isAciklama" name="isAciklama" required>
+                </div>
+                <div class="col-md-6 mb-3">
+                    <label for="dateInput" class="form-label"><strong>İşin Yapılması Gereken Tarih </strong></label>
+                    <input type="date" class="form-control" id="dateInput" name="YapilacakTarih" required>
+                </div>
+                <div class="col-md-6 mb-3">
+                    <label class="form-label"><strong>Aciliyet Seviyesi</strong></label>
+                    <div class="form-check" style="color: #00ff21">
+                        <input class="form-check-input" type="radio" name="AciliyetSeviyesi" id="exampleRadios1" value="Normal" checked>
+                        <label class="form-check-label" for="exampleRadios1">
+                            <strong> Normal </strong>
+                        </label>
+                    </div>
+                    <div class="form-check "style="color: #ffd800">
+                        <input class="form-check-input" type="radio" name="AciliyetSeviyesi" id="exampleRadios2" value="Acil">
+                        <label class="form-check-label" for="exampleRadios2">
+                            <strong> Acil </strong>
+                        </label>
+                    </div>
+                    <div class="form-check"style="color: #ff0000">
+                        <input class="form-check-input" type="radio" name="AciliyetSeviyesi" id="exampleRadios3" value="Çok Acil">
+                        <label class="form-check-label" for="exampleRadios3">
+                            <strong> Çok Acil </strong>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="mb-2">
+                    <label for="selectPer" class="form-label"><strong>Çalışan Seçiniz</strong></label>
+                    <select class="form-select w-25" name="selectPer" id="selectPer">
+                        @foreach (var personel in ViewBag.personeller)
+                        {
+                            <option value="@personel.personelId">@personel.personelAdSoyad</option>
+                        }
+                    </select>
+                </div>
+
+                <div class="mb-3">
+                    <button class="btn btn-outline-success" type="submit">İş Ata</button>
+                </div>
+            }
+        </div>
+    </div>
+</div>

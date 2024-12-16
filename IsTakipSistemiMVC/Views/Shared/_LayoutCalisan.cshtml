@@ -1,0 +1,69 @@
+﻿@{
+    Layout = null;
+}
+
+<title>İş Takip Admin Çalışan</title>
+<link rel="stylesheet" href="@Url.Content("~/Content/style.css")" type="text/css" /> <!-- bunu yapmasaydım cONTENTI güncellemıyordu !!!-->
+<link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+<script src="~/Scripts/bootstrap.bundle.min.js"></script>
+<link href="~/Content/yonetici/yonetıcılay.css" rel="stylesheet" />
+
+<body>
+    <nav class="navbar navbar-expand-md navbar-custom">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <font size="3" color="white" face="Verdana">İş Takip Çalışan</font>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-1 mb-lg-0">
+                    <li class="nav-item">
+                        @Html.ActionLink("Anasayfa", "Index", "Calisan", new { }, new { @class = "btn btn-outline-info btn-custom" })
+                    </li>
+                    <li class="nav-item">
+                        @Html.ActionLink("Okunacak İşler", "OkunacakIsler", "Calisan", new { }, new { @class = "btn btn-outline-info btn-custom" })
+                    </li>
+                    <li class="nav-item">
+                        @Html.ActionLink("İş Yapılıyor", "Yapiliyor", "Calisan", new { }, new { @class = "btn btn-outline-info btn-custom" })
+                    </li>
+                    <li class="nav-item">
+                        @Html.ActionLink("İş Tamamla", "Yap", "Calisan", new { }, new { @class = "btn btn-outline-info btn-custom" })
+                    </li>
+                    <li class="nav-item">
+                        @Html.ActionLink("İş Takip", "Takip", "Calisan", new { }, new { @class = "btn btn-outline-info btn-custom" })
+                    </li>
+                </ul>
+                <div class="d-flex justify-content-end">    
+                    <div class="card mb-2 mb-lg-0 me-2">
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item" style="background-color: #EEE0C9; color: black;">
+                                <strong>@ViewBag.CalisanBilgisi</strong>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="d-flex nav-item">
+                    @Html.ActionLink("Parola Değiştir", "Index", "SifreKontrol", new { }, new { @class = "btn btn-light mx-1" })
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            @Html.ActionLink("Çıkış", "Index", "Logout", new { }, new { @class = "btn btn-danger mx-1" })
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main role="main" class="container container-custom">
+        @RenderBody()
+    </main>
+</body>
+
+<!-- Notlar -->
+<!-- Yöneticiye özgü linkleri oluşturmamız gerek HtmlHelper yararlanılır. -->
+<!-- <a class="nav-link" href="#">Link</a> --> <!-- Bunun yerine ActionLink kullanılır -->
+<!-- 5. parametrede de nav-link kullandığımız için onu da gireceğiz, HTML attribute kullanılarak -->
+<!-- Anasayfa linki Index sayfasına yönlendirsin, yönetici controller içinde bulunan -->

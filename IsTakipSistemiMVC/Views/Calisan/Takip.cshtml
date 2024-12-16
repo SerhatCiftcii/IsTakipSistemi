@@ -1,0 +1,147 @@
+﻿@model IsTakipSistemiMVC.Models.IsDurumModel
+
+@{
+    ViewBag.Title = "Takip";
+    Layout = "~/Views/Shared/_LayoutCalisan.cshtml";
+}
+
+<head>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <link href="~/Content/Image.css" rel="stylesheet" />
+    <script src="~/Scripts/Image.js"></script>
+
+</head>
+<div class="d-flex m-2 ">
+    <div class="card mb-2 mb-lg-0 me-2">
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item" style="background-color: #EEE0C9; color: black;">
+                <strong>Tamamlanan İş Sayısı: @ViewBag.TamamlananIsSayisi</strong>
+            </li>
+        </ul>
+    </div>
+</div>
+
+<div class="container mt-5">
+    @if (ViewBag.Mesaj != null)
+    {
+        <div class="alert alert-info fw-bold">
+            @ViewBag.Mesaj
+        </div>
+    }
+    @using (Html.BeginForm("Takip", "Calisan", FormMethod.Get))
+    {
+        <div class="col-md-3 mb-0 me-4">
+            <label class="form-label"><strong>Aciliyet Seviyesine Göre İşleri Getir</strong></label>
+
+            <div class="d-flex align-items-center">
+                <div class="form-check me-2" style="color: #00ff21; min-width: 90px;">
+                    <input class="form-check-input" type="radio" name="aciliyetSeviyesi" id="exampleRadios1" value="Normal" @if (Request.QueryString["aciliyetSeviyesi"] == "Normal") { <text> </text> }>
+                    <label class="form-check-label" for="exampleRadios1">
+                        <strong> Normal </strong>
+                    </label>
+                </div>
+
+                <div class="form-check me-2" style="color: #ffd800; min-width: 70px;">
+                    <input class="form-check-input" type="radio" name="aciliyetSeviyesi" id="exampleRadios2" value="Acil" @if (Request.QueryString["aciliyetSeviyesi"] == "Acil") { <text> </text> }>
+                    <label class="form-check-label" for="exampleRadios2">
+                        <strong> Acil </strong>
+                    </label>
+                </div>
+
+                <div class="form-check me-2" style="color: #ff0000; min-width: 100px;">
+                    <input class="form-check-input" type="radio" name="aciliyetSeviyesi" id="exampleRadios3" value="Çok Acil" @if (Request.QueryString["aciliyetSeviyesi"] == "Çok Acil") { <text> </text> }>
+                    <label class="form-check-label" for="exampleRadios3">
+                        <strong> Çok Acil </strong>
+                    </label>
+                </div>
+
+                <button type="submit" class="btn btn-primary" style="margin-left: auto;">Filtrele</button>
+            </div>
+        </div>
+    }
+
+
+    <div class="row">
+        @foreach (var isDurum in Model.isdurumlar)
+        {
+            <div class="col-lg-4 col-md-4 col-sm-8 mb-2">
+                <div class="card ">
+                    <div class="card-header text-center fw-bold">
+                        @isDurum.İsBaslik -
+                        <span class="mb-1 ms-2">
+
+                            @if (isDurum.AciliyetSeviyesi == "Normal")
+                            {
+                                <span style="color: #00ff21;"> <strong>  @isDurum.AciliyetSeviyesi </strong></span>
+                            }
+                            else if (isDurum.AciliyetSeviyesi == "Acil")
+                            {
+                                <span style="color: #ffd800;"> <strong>  @isDurum.AciliyetSeviyesi </strong></span>
+                            }
+                            else if (isDurum.AciliyetSeviyesi == "Çok Acil")
+                            {
+                                <span style="color: #ff0000;">  <strong>  @isDurum.AciliyetSeviyesi </strong> </span>
+                            }
+                        </span>
+                    </div>
+                    <div class="card-body">
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item"><strong>İş Açıklama:</strong> @isDurum.isAciklama</li>
+                            <li class="list-group-item"><strong>İletilen Tarih:</strong> @isDurum.iletilenTarih</li>
+                            <li class="list-group-item"><strong>Yapılan Tarih:</strong> @isDurum.yapilanTarih</li>
+                            <li class="list-group-item"><strong>İş Durumu:</strong> @isDurum.durumAd</li>
+                            <li class="list-group-item"><strong>Tamamlanan İşin Yorumu:</strong>@(isDurum.isYorum != null ? isDurum.isYorum : "Henüz Girilmedi") </li>
+                            <li class="list-group-item"><strong>Yapılıyor İş Yorum:</strong>@(isDurum.yapiliyorisYorum != null ? isDurum.yapiliyorisYorum : "Henüz Girilmedi") </li>
+                            <li class="list-group-item"><strong>Yapılması Geren Tarih:</strong> @isDurum.YapilicakTarih</li>
+                           
+
+                            @if (isDurum.Image != null && isDurum.Image.Length > 0)
+                            {
+                                <li class="list-group-item">
+                                    <strong>Fotoğraf:</strong>
+                                    <!-- Eğer işin resmi varsa -->
+                                    @if (isDurum.Image != null && isDurum.Image.Length > 0)
+                                    {
+                                        <!-- Resmi Base64 formatına dönüştürdüm -->
+                                        var base64String = Convert.ToBase64String(isDurum.Image);
+                                        var imageSrc = String.Format("data:image/jpeg;base64,{0}", base64String);
+                                        <img src="@imageSrc" alt="İş Fotoğrafı" class="img-thumbnail" onclick="openLargeImage(this.src)" />
+                                    }
+                                    else
+                                    {
+                                        <!-- Fotoğraf mevcut değil mesajını yan yana göstermek için -->
+                                        <span class="no-photo-message">Fotoğraf mevcut değil.</span>
+                                    }
+                                </li>
+                            }
+                            else
+                            {
+                                <li class="list-group-item"><strong>Fotoğraf Mevcut Değil</strong> </li>
+                            }
+                        </ul>
+
+                    </div>
+                </div>
+                <br />
+            </div>
+        }
+    </div>
+</div>
+
+<!-- Büyük Resim Modal tıklayınca açma işlemi -->
+<div id="largeImageModal" class="img-large" onclick="closeLargeImage()">
+    <span class="close" onclick="closeLargeImage()">&times;</span>  <!-- Kapatma butonu -->
+    <img id="largeImage" src="" alt="Büyük İş Fotoğrafı" /> !-- Büyük resmi göster -->
+</div>
+
+<!-- ımage.jsde var ama buraya yazınca çalışıyor nedenını öğren ?-->
+<script>
+    function openLargeImage(src) {
+        document.getElementById('largeImage').src = src; // Büyük resmin kaynağını ayarla
+        document.getElementById('largeImageModal').style.display = 'block';  // Büyük resmi göster
+    }
+
+    function closeLargeImage() {
+        document.getElementById('largeImageModal').style.display = 'none'; // Büyük resmi gizle
+    }
+</script>

@@ -1,0 +1,293 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Serhatt\\Desktop\\IsTakipSistemiMVC\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{75759374-0AAF-48B4-9B98-282C5734A565}|IsTakipSistemiMVC\\IsTakipSistemiMVC.csproj|C:\\Users\\Serhatt\\Desktop\\IsTakipSistemiMVC\\istakipsistemimvc\\web.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "RelativeMoniker": "D:0:0:{75759374-0AAF-48B4-9B98-282C5734A565}|IsTakipSistemiMVC\\IsTakipSistemiMVC.csproj|solutionrelative:istakipsistemimvc\\web.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{75759374-0AAF-48B4-9B98-282C5734A565}|IsTakipSistemiMVC\\IsTakipSistemiMVC.csproj|c:\\users\\serhatt\\desktop\\istakipsistemimvc\\istakipsistemimvc\\models\\toplamis.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{75759374-0AAF-48B4-9B98-282C5734A565}|IsTakipSistemiMVC\\IsTakipSistemiMVC.csproj|solutionrelative:istakipsistemimvc\\models\\toplamis.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{75759374-0AAF-48B4-9B98-282C5734A565}|IsTakipSistemiMVC\\IsTakipSistemiMVC.csproj|C:\\Users\\Serhatt\\Desktop\\IsTakipSistemiMVC\\istakipsistemimvc\\models\\birimyetkiturler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{75759374-0AAF-48B4-9B98-282C5734A565}|IsTakipSistemiMVC\\IsTakipSistemiMVC.csproj|solutionrelative:istakipsistemimvc\\models\\birimyetkiturler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{75759374-0AAF-48B4-9B98-282C5734A565}|IsTakipSistemiMVC\\IsTakipSistemiMVC.csproj|C:\\Users\\Serhatt\\Desktop\\IsTakipSistemiMVC\\istakipsistemimvc\\models\\isdurummodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{75759374-0AAF-48B4-9B98-282C5734A565}|IsTakipSistemiMVC\\IsTakipSistemiMVC.csproj|solutionrelative:istakipsistemimvc\\models\\isdurummodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{75759374-0AAF-48B4-9B98-282C5734A565}|IsTakipSistemiMVC\\IsTakipSistemiMVC.csproj|C:\\Users\\Serhatt\\Desktop\\IsTakipSistemiMVC\\istakipsistemimvc\\models\\istakipmodel.edmx||{C99AEA30-8E36-4515-B76F-496F5A48A6AA}|",
+      "RelativeMoniker": "D:0:0:{75759374-0AAF-48B4-9B98-282C5734A565}|IsTakipSistemiMVC\\IsTakipSistemiMVC.csproj|solutionrelative:istakipsistemimvc\\models\\istakipmodel.edmx||{C99AEA30-8E36-4515-B76F-496F5A48A6AA}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{75759374-0AAF-48B4-9B98-282C5734A565}|IsTakipSistemiMVC\\IsTakipSistemiMVC.csproj|C:\\Users\\Serhatt\\Desktop\\IsTakipSistemiMVC\\istakipsistemimvc\\views\\sifrekontrol\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{75759374-0AAF-48B4-9B98-282C5734A565}|IsTakipSistemiMVC\\IsTakipSistemiMVC.csproj|solutionrelative:istakipsistemimvc\\views\\sifrekontrol\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{75759374-0AAF-48B4-9B98-282C5734A565}|IsTakipSistemiMVC\\IsTakipSistemiMVC.csproj|C:\\Users\\Serhatt\\Desktop\\IsTakipSistemiMVC\\istakipsistemimvc\\views\\shared\\_layoutsistemyoneticisi.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{75759374-0AAF-48B4-9B98-282C5734A565}|IsTakipSistemiMVC\\IsTakipSistemiMVC.csproj|solutionrelative:istakipsistemimvc\\views\\shared\\_layoutsistemyoneticisi.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{75759374-0AAF-48B4-9B98-282C5734A565}|IsTakipSistemiMVC\\IsTakipSistemiMVC.csproj|C:\\Users\\Serhatt\\Desktop\\IsTakipSistemiMVC\\istakipsistemimvc\\controllers\\sifrekontrolcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{75759374-0AAF-48B4-9B98-282C5734A565}|IsTakipSistemiMVC\\IsTakipSistemiMVC.csproj|solutionrelative:istakipsistemimvc\\controllers\\sifrekontrolcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{75759374-0AAF-48B4-9B98-282C5734A565}|IsTakipSistemiMVC\\IsTakipSistemiMVC.csproj|C:\\Users\\Serhatt\\Desktop\\IsTakipSistemiMVC\\istakipsistemimvc\\views\\shared\\_layouty\u00F6netici.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{75759374-0AAF-48B4-9B98-282C5734A565}|IsTakipSistemiMVC\\IsTakipSistemiMVC.csproj|solutionrelative:istakipsistemimvc\\views\\shared\\_layouty\u00F6netici.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{75759374-0AAF-48B4-9B98-282C5734A565}|IsTakipSistemiMVC\\IsTakipSistemiMVC.csproj|C:\\Users\\Serhatt\\Desktop\\IsTakipSistemiMVC\\istakipsistemimvc\\controllers\\sistemyoneticisicontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{75759374-0AAF-48B4-9B98-282C5734A565}|IsTakipSistemiMVC\\IsTakipSistemiMVC.csproj|solutionrelative:istakipsistemimvc\\controllers\\sistemyoneticisicontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{75759374-0AAF-48B4-9B98-282C5734A565}|IsTakipSistemiMVC\\IsTakipSistemiMVC.csproj|C:\\Users\\Serhatt\\Desktop\\IsTakipSistemiMVC\\istakipsistemimvc\\controllers\\yoneticicontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{75759374-0AAF-48B4-9B98-282C5734A565}|IsTakipSistemiMVC\\IsTakipSistemiMVC.csproj|solutionrelative:istakipsistemimvc\\controllers\\yoneticicontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{75759374-0AAF-48B4-9B98-282C5734A565}|IsTakipSistemiMVC\\IsTakipSistemiMVC.csproj|C:\\Users\\Serhatt\\Desktop\\IsTakipSistemiMVC\\istakipsistemimvc\\views\\personel\\pasif.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{75759374-0AAF-48B4-9B98-282C5734A565}|IsTakipSistemiMVC\\IsTakipSistemiMVC.csproj|solutionrelative:istakipsistemimvc\\views\\personel\\pasif.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{75759374-0AAF-48B4-9B98-282C5734A565}|IsTakipSistemiMVC\\IsTakipSistemiMVC.csproj|C:\\Users\\Serhatt\\Desktop\\IsTakipSistemiMVC\\istakipsistemimvc\\controllers\\personelcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{75759374-0AAF-48B4-9B98-282C5734A565}|IsTakipSistemiMVC\\IsTakipSistemiMVC.csproj|solutionrelative:istakipsistemimvc\\controllers\\personelcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{75759374-0AAF-48B4-9B98-282C5734A565}|IsTakipSistemiMVC\\IsTakipSistemiMVC.csproj|C:\\Users\\Serhatt\\Desktop\\IsTakipSistemiMVC\\istakipsistemimvc\\views\\personel\\aktif.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{75759374-0AAF-48B4-9B98-282C5734A565}|IsTakipSistemiMVC\\IsTakipSistemiMVC.csproj|solutionrelative:istakipsistemimvc\\views\\personel\\aktif.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{75759374-0AAF-48B4-9B98-282C5734A565}|IsTakipSistemiMVC\\IsTakipSistemiMVC.csproj|C:\\Users\\Serhatt\\Desktop\\IsTakipSistemiMVC\\istakipsistemimvc\\views\\personel\\olustur.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{75759374-0AAF-48B4-9B98-282C5734A565}|IsTakipSistemiMVC\\IsTakipSistemiMVC.csproj|solutionrelative:istakipsistemimvc\\views\\personel\\olustur.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{75759374-0AAF-48B4-9B98-282C5734A565}|IsTakipSistemiMVC\\IsTakipSistemiMVC.csproj|C:\\Users\\Serhatt\\Desktop\\IsTakipSistemiMVC\\istakipsistemimvc\\views\\personel\\guncelle.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{75759374-0AAF-48B4-9B98-282C5734A565}|IsTakipSistemiMVC\\IsTakipSistemiMVC.csproj|solutionrelative:istakipsistemimvc\\views\\personel\\guncelle.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{75759374-0AAF-48B4-9B98-282C5734A565}|IsTakipSistemiMVC\\IsTakipSistemiMVC.csproj|C:\\Users\\Serhatt\\Desktop\\IsTakipSistemiMVC\\istakipsistemimvc\\views\\personel\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{75759374-0AAF-48B4-9B98-282C5734A565}|IsTakipSistemiMVC\\IsTakipSistemiMVC.csproj|solutionrelative:istakipsistemimvc\\views\\personel\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 1,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedHeight": 343,
+          "SelectedChildIndex": 4,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "ToplamIs.cs",
+              "DocumentMoniker": "C:\\Users\\Serhatt\\Desktop\\IsTakipSistemiMVC\\IsTakipSistemiMVC\\Models\\ToplamIs.cs",
+              "RelativeDocumentMoniker": "IsTakipSistemiMVC\\Models\\ToplamIs.cs",
+              "ToolTip": "C:\\Users\\Serhatt\\Desktop\\IsTakipSistemiMVC\\IsTakipSistemiMVC\\Models\\ToplamIs.cs",
+              "RelativeToolTip": "IsTakipSistemiMVC\\Models\\ToplamIs.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-16T22:50:26.471Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "BirimYetkiTurler.cs",
+              "DocumentMoniker": "C:\\Users\\Serhatt\\Desktop\\IsTakipSistemiMVC\\IsTakipSistemiMVC\\Models\\BirimYetkiTurler.cs",
+              "RelativeDocumentMoniker": "IsTakipSistemiMVC\\Models\\BirimYetkiTurler.cs",
+              "ToolTip": "C:\\Users\\Serhatt\\Desktop\\IsTakipSistemiMVC\\IsTakipSistemiMVC\\Models\\BirimYetkiTurler.cs",
+              "RelativeToolTip": "IsTakipSistemiMVC\\Models\\BirimYetkiTurler.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-16T22:50:24.994Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "IsDurumModel.cs",
+              "DocumentMoniker": "C:\\Users\\Serhatt\\Desktop\\IsTakipSistemiMVC\\IsTakipSistemiMVC\\Models\\IsDurumModel.cs",
+              "RelativeDocumentMoniker": "IsTakipSistemiMVC\\Models\\IsDurumModel.cs",
+              "ToolTip": "C:\\Users\\Serhatt\\Desktop\\IsTakipSistemiMVC\\IsTakipSistemiMVC\\Models\\IsDurumModel.cs",
+              "RelativeToolTip": "IsTakipSistemiMVC\\Models\\IsDurumModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-16T22:50:21.852Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "IsTakipModel.edmx [Diagram1]",
+              "DocumentMoniker": "C:\\Users\\Serhatt\\Desktop\\IsTakipSistemiMVC\\IsTakipSistemiMVC\\Models\\IsTakipModel.edmx",
+              "RelativeDocumentMoniker": "IsTakipSistemiMVC\\Models\\IsTakipModel.edmx",
+              "ToolTip": "C:\\Users\\Serhatt\\Desktop\\IsTakipSistemiMVC\\IsTakipSistemiMVC\\Models\\IsTakipModel.edmx [Diagram1]",
+              "RelativeToolTip": "IsTakipSistemiMVC\\Models\\IsTakipModel.edmx [Diagram1]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001116|",
+              "WhenOpened": "2024-12-16T22:36:50.426Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Web.config",
+              "DocumentMoniker": "C:\\Users\\Serhatt\\Desktop\\IsTakipSistemiMVC\\IsTakipSistemiMVC\\Web.config",
+              "RelativeDocumentMoniker": "IsTakipSistemiMVC\\Web.config",
+              "ToolTip": "C:\\Users\\Serhatt\\Desktop\\IsTakipSistemiMVC\\IsTakipSistemiMVC\\Web.config",
+              "RelativeToolTip": "IsTakipSistemiMVC\\Web.config",
+              "ViewState": "AgIAABgAAAAAAAAAAAAAADIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000601|",
+              "WhenOpened": "2024-12-16T22:18:47.012Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\Serhatt\\Desktop\\IsTakipSistemiMVC\\IsTakipSistemiMVC\\Views\\SifreKontrol\\Index.cshtml",
+              "RelativeDocumentMoniker": "IsTakipSistemiMVC\\Views\\SifreKontrol\\Index.cshtml",
+              "ToolTip": "C:\\Users\\Serhatt\\Desktop\\IsTakipSistemiMVC\\IsTakipSistemiMVC\\Views\\SifreKontrol\\Index.cshtml",
+              "RelativeToolTip": "IsTakipSistemiMVC\\Views\\SifreKontrol\\Index.cshtml",
+              "ViewState": "AgIAADkAAAAAAAAAAAAAAFgAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-08-29T13:25:07.338Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "_LayoutSistemYoneticisi.cshtml",
+              "DocumentMoniker": "C:\\Users\\Serhatt\\Desktop\\IsTakipSistemiMVC\\IsTakipSistemiMVC\\Views\\Shared\\_LayoutSistemYoneticisi.cshtml",
+              "RelativeDocumentMoniker": "IsTakipSistemiMVC\\Views\\Shared\\_LayoutSistemYoneticisi.cshtml",
+              "ToolTip": "C:\\Users\\Serhatt\\Desktop\\IsTakipSistemiMVC\\IsTakipSistemiMVC\\Views\\Shared\\_LayoutSistemYoneticisi.cshtml",
+              "RelativeToolTip": "IsTakipSistemiMVC\\Views\\Shared\\_LayoutSistemYoneticisi.cshtml",
+              "ViewState": "AgIAACwAAAAAAAAAAAAnwEQAAABEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-08-22T13:46:18.496Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "_LayoutY\u00F6netici.cshtml",
+              "DocumentMoniker": "C:\\Users\\Serhatt\\Desktop\\IsTakipSistemiMVC\\IsTakipSistemiMVC\\Views\\Shared\\_LayoutY\u00F6netici.cshtml",
+              "RelativeDocumentMoniker": "IsTakipSistemiMVC\\Views\\Shared\\_LayoutY\u00F6netici.cshtml",
+              "ToolTip": "C:\\Users\\Serhatt\\Desktop\\IsTakipSistemiMVC\\IsTakipSistemiMVC\\Views\\Shared\\_LayoutY\u00F6netici.cshtml",
+              "RelativeToolTip": "IsTakipSistemiMVC\\Views\\Shared\\_LayoutY\u00F6netici.cshtml",
+              "ViewState": "AQIAABMAAAAAAAAAAEBVwAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-08-22T20:08:31.336Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "SifreKontrolController.cs",
+              "DocumentMoniker": "C:\\Users\\Serhatt\\Desktop\\IsTakipSistemiMVC\\IsTakipSistemiMVC\\Controllers\\SifreKontrolController.cs",
+              "RelativeDocumentMoniker": "IsTakipSistemiMVC\\Controllers\\SifreKontrolController.cs",
+              "ToolTip": "C:\\Users\\Serhatt\\Desktop\\IsTakipSistemiMVC\\IsTakipSistemiMVC\\Controllers\\SifreKontrolController.cs",
+              "RelativeToolTip": "IsTakipSistemiMVC\\Controllers\\SifreKontrolController.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAiwCAAAAASAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-22T17:11:11.134Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "SistemYoneticisiController.cs",
+              "DocumentMoniker": "C:\\Users\\Serhatt\\Desktop\\IsTakipSistemiMVC\\IsTakipSistemiMVC\\Controllers\\SistemYoneticisiController.cs",
+              "RelativeDocumentMoniker": "IsTakipSistemiMVC\\Controllers\\SistemYoneticisiController.cs",
+              "ToolTip": "C:\\Users\\Serhatt\\Desktop\\IsTakipSistemiMVC\\IsTakipSistemiMVC\\Controllers\\SistemYoneticisiController.cs",
+              "RelativeToolTip": "IsTakipSistemiMVC\\Controllers\\SistemYoneticisiController.cs",
+              "ViewState": "AQIAAA4BAAAAAAAAAAAxwA4BAAAgAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-22T16:05:41.612Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "Pasif.cshtml",
+              "DocumentMoniker": "C:\\Users\\Serhatt\\Desktop\\IsTakipSistemiMVC\\IsTakipSistemiMVC\\Views\\Personel\\Pasif.cshtml",
+              "RelativeDocumentMoniker": "IsTakipSistemiMVC\\Views\\Personel\\Pasif.cshtml",
+              "ToolTip": "C:\\Users\\Serhatt\\Desktop\\IsTakipSistemiMVC\\IsTakipSistemiMVC\\Views\\Personel\\Pasif.cshtml",
+              "RelativeToolTip": "IsTakipSistemiMVC\\Views\\Personel\\Pasif.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABgAAABBAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-08-22T15:57:02.225Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "Aktif.cshtml",
+              "DocumentMoniker": "C:\\Users\\Serhatt\\Desktop\\IsTakipSistemiMVC\\IsTakipSistemiMVC\\Views\\Personel\\Aktif.cshtml",
+              "RelativeDocumentMoniker": "IsTakipSistemiMVC\\Views\\Personel\\Aktif.cshtml",
+              "ToolTip": "C:\\Users\\Serhatt\\Desktop\\IsTakipSistemiMVC\\IsTakipSistemiMVC\\Views\\Personel\\Aktif.cshtml",
+              "RelativeToolTip": "IsTakipSistemiMVC\\Views\\Personel\\Aktif.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAACEAAAASAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-08-22T15:52:13.061Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "YoneticiController.cs",
+              "DocumentMoniker": "C:\\Users\\Serhatt\\Desktop\\IsTakipSistemiMVC\\IsTakipSistemiMVC\\Controllers\\YoneticiController.cs",
+              "RelativeDocumentMoniker": "IsTakipSistemiMVC\\Controllers\\YoneticiController.cs",
+              "ToolTip": "C:\\Users\\Serhatt\\Desktop\\IsTakipSistemiMVC\\IsTakipSistemiMVC\\Controllers\\YoneticiController.cs",
+              "RelativeToolTip": "IsTakipSistemiMVC\\Controllers\\YoneticiController.cs",
+              "ViewState": "AQIAAB4BAAAAAAAAAAAYwLwAAAATAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-18T16:04:40.759Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "Olustur.cshtml",
+              "DocumentMoniker": "C:\\Users\\Serhatt\\Desktop\\IsTakipSistemiMVC\\IsTakipSistemiMVC\\Views\\Personel\\Olustur.cshtml",
+              "RelativeDocumentMoniker": "IsTakipSistemiMVC\\Views\\Personel\\Olustur.cshtml",
+              "ToolTip": "C:\\Users\\Serhatt\\Desktop\\IsTakipSistemiMVC\\IsTakipSistemiMVC\\Views\\Personel\\Olustur.cshtml",
+              "RelativeToolTip": "IsTakipSistemiMVC\\Views\\Personel\\Olustur.cshtml",
+              "ViewState": "AQIAAAoAAAAAAAAAAEBVwCwAAAA5AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-08-22T14:12:40.323Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "Guncelle.cshtml",
+              "DocumentMoniker": "C:\\Users\\Serhatt\\Desktop\\IsTakipSistemiMVC\\IsTakipSistemiMVC\\Views\\Personel\\Guncelle.cshtml",
+              "RelativeDocumentMoniker": "IsTakipSistemiMVC\\Views\\Personel\\Guncelle.cshtml",
+              "ToolTip": "C:\\Users\\Serhatt\\Desktop\\IsTakipSistemiMVC\\IsTakipSistemiMVC\\Views\\Personel\\Guncelle.cshtml",
+              "RelativeToolTip": "IsTakipSistemiMVC\\Views\\Personel\\Guncelle.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABcAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-08-22T15:05:02.251Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "PersonelController.cs",
+              "DocumentMoniker": "C:\\Users\\Serhatt\\Desktop\\IsTakipSistemiMVC\\IsTakipSistemiMVC\\Controllers\\PersonelController.cs",
+              "RelativeDocumentMoniker": "IsTakipSistemiMVC\\Controllers\\PersonelController.cs",
+              "ToolTip": "C:\\Users\\Serhatt\\Desktop\\IsTakipSistemiMVC\\IsTakipSistemiMVC\\Controllers\\PersonelController.cs",
+              "RelativeToolTip": "IsTakipSistemiMVC\\Controllers\\PersonelController.cs",
+              "ViewState": "AQIAAGsAAAAAAAAAAAAIwH4AAAAdAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-22T13:43:34.772Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\Serhatt\\Desktop\\IsTakipSistemiMVC\\IsTakipSistemiMVC\\Views\\Personel\\Index.cshtml",
+              "RelativeDocumentMoniker": "IsTakipSistemiMVC\\Views\\Personel\\Index.cshtml",
+              "ToolTip": "C:\\Users\\Serhatt\\Desktop\\IsTakipSistemiMVC\\IsTakipSistemiMVC\\Views\\Personel\\Index.cshtml",
+              "RelativeToolTip": "IsTakipSistemiMVC\\Views\\Personel\\Index.cshtml",
+              "ViewState": "AQIAAAcAAAAAAAAAAEBVwB0AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-08-22T13:33:17.605Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+﻿@model IsTakipSistemiMVC.Models.Birimler
+@{
+    ViewBag.Title = "Guncelle";
+    Layout = "~/Views/Shared/_LayoutSistemYoneticisi.cshtml";
+}
+
+<div class="container mt-5">
+    <h3>Birim Güncelleme İşlemi</h3>
+    <hr />
+    @using (Html.BeginForm("Guncelle", "SistemYoneticisi", FormMethod.Post))
+    {
+        @Html.HiddenFor(model=>model.birimId)
+        <div class="row mb-3">
+            @Html.LabelFor(model=>model.birimAd, htmlAttributes: new {@class = "col-sm-3 col-form-label" })
+            <div class="col-sm-6">
+                @Html.EditorFor(model=>model.birimAd, new { htmlAttributes = new { @class = "form-control" } })
+            </div>
+        </div>
+        <div class="text-center  d-grid gap-5 col-6 mx-auto">
+            <button class="btn btn-success" type="submit">Güncelle</button>
+        </div>
+
+    }
+</div>
+

@@ -1,5 +1,5 @@
 # IsTakipSistemi
-IsTakipSistemi asp.net project 
+IsTakipSistemi asp.net project  Not:master branchde
 
 # IsTakip Sistemi MVC
 

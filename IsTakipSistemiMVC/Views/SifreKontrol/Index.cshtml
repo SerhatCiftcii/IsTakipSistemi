@@ -1,0 +1,95 @@
+﻿@model IsTakipSistemiMVC.Models.Personeller
+@{
+    if (Model.personelYetkiTurId == 1)
+    {
+        Layout = "~/Views/Shared/_LayoutYönetici.cshtml";
+    }
+    else if (Model.personelYetkiTurId == 2)
+    {
+        Layout = "~/Views/Shared/_LayoutCalisan.cshtml";
+    }
+}
+
+
+<!-- <div class="container mt-4">
+
+    <div class="h-2 p-2 text-dark bg-light rounded-3">
+        <p>Parolanızı değiştirmek için eski parolanızı ve yeni parolanızı tekrarını giriniz</p>
+    </div>
+</div> -->
+
+<style>
+    .form-label {
+        margin-bottom: 0; /* Etiket alt boşluğunu kaldır */
+    }
+
+    .form-control {
+        margin-left: -15rem; /* Giriş alanı ile etiket arasındaki boşluğu azalt */
+    }
+</style>
+
+<div class="container mt-5">
+    @using (Html.BeginForm("Index", "SifreKontrol", FormMethod.Post))
+    {
+        @Html.HiddenFor(m => m.personelId)
+        <div class="row g-2 align-items-center mb-3">   
+            <div class="col-4">
+                <label for="eskiParola" class="form-label">Eski parola:</label>
+            </div>
+            <div class="col-4">
+                <input type="password" id="eskiParola" name="eskiParola" class="form-control" />
+            </div>
+        </div>
+        <div class="row g-2 align-items-center mb-3">
+            <div class="col-4">
+                <label for="yeniParola" class="form-label">Yeni Parola:</label>
+            </div>
+            <div class="col-4 d-flex align-items-center">
+                <input type="password" id="yeniParola" name="yeniParola" class="form-control" aria-describedby="passwordHelp" />
+                <span class="form-text ms-2" id="passwordHelp">
+                    6 ile 15 Karakter Uzunluğunda olmalıdır.
+                </span>
+            </div>
+        </div>
+        <div class="row g-2 align-items-center mb-3">
+            <div class="col-4">
+                <label for="yeniParolaKontrol" class="form-label">Yeni Parola Tekrar:</label>
+            </div>
+            <div class="col-4 d-flex align-items-center">
+                <input type="password" id="yeniParolaKontrol" name="yeniParolaKontrol" class="form-control" />
+                <span class="form-text ms-2" id="passwordHelp">
+                   Yeni Parola Tekrarı
+                </span>
+            </div>
+        </div>
+        <div class="row g-2 align-items-center">
+            <div class="col-auto">
+                <button type="submit" class="btn btn-primary">Parola Değiştir</button>
+            </div>
+        </div>
+        <br /> <br />
+        if (ViewBag.mesaj != null)
+        {
+            <div class="@ViewBag.sitil" role="alert">
+                @ViewBag.mesaj
+            </div>
+        }
+    }
+</div>
+
+
+<!-- Ansayafaya yönlendirme.-->
+<script>
+    const myTimeout = setTimeout(yonlendir, 3000);
+
+    function yonlendir() {
+        if (@ViewBag.yetkiTurId == 1)
+        {
+            window.location.href="/Yonetici/Index"
+            }
+        else
+        {
+            window.location.href = "/Calisan/Index"
+            }
+    }
+</script>

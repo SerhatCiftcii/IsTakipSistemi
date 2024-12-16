@@ -1,0 +1,32 @@
+﻿.navbar-custom {
+    background-color: #96B6C5;
+}
+
+.btn-custom {
+    color: black;
+    border-color: white;
+    margin-right: 10px; /* Navbarlar arasında boşluk bırakır */
+}
+
+    .btn-custom:hover {
+        background-color: white;
+        color: #96B6C5;
+    }
+
+.container-custom {
+    padding-top: 20px;
+}
+
+.card {
+    border-color: #96B6C5 !important; /* Card border rengi */
+}
+
+.body {
+    background-color: #F1F0E8;
+}
+
+.card-header {
+    background-color: #EEE0C9; /* Card header arka plan rengi */
+    color: black; /* Card header metin rengi */
+}
+

@@ -1,0 +1,21 @@
+﻿@model IsTakipSistemiMVC.Models.Personeller
+@{
+    ViewBag.Title = "Guncelle";
+    Layout = "~/Views/Shared/_LayoutYönetici.cshtml";
+}
+
+<div class="container mt-5">
+    @using (Html.BeginForm("Guncelle", "Yonetici", FormMethod.Post, new { @class = "row g-3" }))
+    {
+        <input type="hidden" value="@Model.personelId" name="id" />
+        <div class="col-12">
+            <label for="adSoyad" class="form-label">Personel Ad SOyad</label>
+            <input type="text" class="form-control" id="adSoyad" name="adSoyad" value="@Model.personelAdSoyad" />
+        </div>
+        <div class="col-12">
+            <button class="btn btn-success" type="submit">Personel Güncelle</button>
+
+        </div>
+    }
+</div>
+

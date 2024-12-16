@@ -1,0 +1,27 @@
+﻿
+@{
+    ViewBag.Title = "Olustur";
+    Layout = "~/Views/Shared/_LayoutSistemYoneticisi.cshtml";
+}
+
+<div  class="container mt-5" >
+    <h3>Yeni Birim Ekleme İşlemi</h3>
+    <hr/>
+    @using (Html.BeginForm("Olustur", "SistemYoneticisi", FormMethod.Post))
+       {
+        <div class="row mb-4">
+            <label for="birimAd" class="col-sm-3 col-form-label"> Birim Adı:</label>
+            <div class="col-sm-6">
+                <input type="text" class="form-control"id="birimAd" name="birimAd" />
+            </div>
+            <div class="mt-1">
+                <div class="text-center  d-grid gap-5 col-6 mx-auto">
+                    <button class="btn btn-primary" type="submit">Ekle</button>
+                </div>
+            </div>
+        </div>
+            
+       }
+
+</div>
+

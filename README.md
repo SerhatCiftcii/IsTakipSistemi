@@ -3,7 +3,6 @@
 # IsTakipSistemi
 IsTakipSistemi asp.net project  Not:master branchde
 
->>>>>>> 91735801b25e524cdb8f88027678c54c2e582ed1
 # IsTakip Sistemi MVC
 
 Bu proje, **ASP.NET 4.7 ve üzeri** sürümünde geliştirilmiş bir MVC uygulamasıdır. Bu projede SQL Server kullanılmıştır ve veritabanı bağlantısı **ADO.NET** ile yapılmıştır.

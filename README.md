@@ -1,7 +1,6 @@
-<<<<<<< HEAD
-=======
+
 # IsTakipSistemi
-IsTakipSistemi asp.net project  Not:master branchde
+IsTakipSistemi asp.net project  
 
 # IsTakip Sistemi MVC
 

@@ -1,0 +1,76 @@
+﻿@{
+    ViewBag.Title = "AyinElemani";
+    Layout = "~/Views/Shared/_LayoutYönetici.cshtml";
+}
+
+<head>
+
+</head>
+
+<div class="container mt-4">
+    @using (Html.BeginForm("AyinElemani", "Yonetici", FormMethod.Post, new { @class = "row" }))
+    {
+        <div class="col-md-4 mb-3">
+            @Html.Partial("_PartialAylarSelect")
+        </div>
+        <div class="col-md-4 mb-3">
+            <select class="form-select" name="yillar">
+                @foreach (var yil in ViewBag.yillar)
+                {
+                    <option value="@yil">@yil</option>
+                }
+            </select>
+        </div>
+        <div class="col-md-4 mb-3 d-grid gap-2">
+            <button class="btn btn-outline-success" type="submit">Ayın Elemanını Getir</button>
+        </div>
+    }
+</div>
+
+@if (ViewBag.SelectedAy != null && ViewBag.SelectedYil != null)
+{
+    <div class="container mt-2 text-center">
+        <div class="alert alert-info" role="alert">
+            <strong>Tarih : @ViewBag.SelectedAy  @ViewBag.SelectedYil   Ayın Elemanı Belirleme İşlemi</strong>
+        </div>
+    </div>
+}
+
+<div class="container mt-4">
+    @if (ViewBag.ayinElemani != null)
+    {
+        var isFirst = true;
+        foreach (var item in ViewBag.ayinElemani)
+        {
+            if (isFirst)
+            {
+                <div class="alert alert-primary mt-5 bg-success" role="alert">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <strong>@item.personelAdSoyad</strong>
+                        <div class="ml-3 ">
+                            <span class="badge bg-info text-light rounded-pill">Tebrikler! Ayın elemanı belirlediniz.</span>
+                        </div>
+                        <span class="badge bg-warning text-dark rounded-pill">Yapılan İş Toplamı: @item.toplamIs</span>
+                    </div>
+                </div>
+                isFirst = false;
+            }
+            else
+            {
+                <div class="alert alert-success mt-5" role="alert">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <strong>@item.personelAdSoyad</strong>
+                        <span class="badge bg-warning text-dark rounded-pill">Yapılan İş Toplamı: @item.toplamIs</span>
+                    </div>
+                </div>
+            }
+        }
+    }
+    else
+    {
+        <div class="alert alert-dark mt-5" role="alert">
+            Herhangi bir çalışan bulunamadı
+        </div>
+    }
+    </div>
+

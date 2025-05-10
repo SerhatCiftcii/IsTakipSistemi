@@ -1,0 +1,92 @@
+﻿@model IEnumerable<IsTakipSistemiMVC.Models.Birimler>
+@{
+    ViewBag.Title = "Birim";
+    Layout = "~/Views/Shared/_LayoutSistemYoneticisi.cshtml";
+}
+<style>
+    .filter-container {
+        display: flex;
+        align-items: center;
+    }
+
+        .filter-container label {
+            margin-right: 15px; /* Label ile select arasında boşluk */
+        }
+
+        .filter-container select {
+            margin-right: 15px; /* Select ile buton arasında boşluk */
+            width: auto; /* Select'in genişliğini içeriğe göre ayarlama */
+        }
+
+        .filter-container button {
+            margin-left: 10px; /* Eğer butonla başka bir öğe arasında boşluk istiyorsanız */
+        }
+</style>
+
+<p class="mt-4">
+    @Html.ActionLink("Yeni Birim Ekle", "Olustur", new { }, new { @class = "btn btn-primary" })
+</p>
+<!-- Wrapper Container -->
+<div class="d-flex justify-content-between align-items-center mb-3">
+    <!-- Filtreleme Formu - Sol Tarafta -->
+    @using (Html.BeginForm("Birim", "SistemYoneticisi", FormMethod.Get))
+    {
+        <div class="form-group filter-container mb-2 mt-1">
+            <label for="filter"><strong>Filtre Seçimi: </strong></label>
+            <select name="filter" id="filter" class="form-control form-control-sm">
+                <option value="Tümü" @(ViewBag.SelectedFilter == "Tümü" ? "selected" : "")>Tüm Birimler</option>
+                <option value="active" @(ViewBag.SelectedFilter == "active" ? "selected" : "")>Aktif Birimler</option>
+                <option value="inactive" @(ViewBag.SelectedFilter == "inactive" ? "selected" : "")>Pasif Birimler</option>
+            </select>
+            <button type="submit" class="btn btn-success btn-sm">Filtrele</button>
+        </div>
+
+    }
+
+    @using (Html.BeginForm("Birim", "SistemYoneticisi", FormMethod.Get))
+    {
+        <div class="form-inline mb-0 d-flex align-items-center">
+            <input class="form-control me-2" type="search" placeholder="Birim ara..." aria-label="Search" name="search" value="@ViewBag.SearchQuery">
+            <button class="btn btn-outline-success" type="submit">Ara</button>
+        </div>
+    }
+</div>
+
+<table class="table table-bordered table-striped table-dark">
+    <tr class=" text-center">
+        <th>
+            @Html.DisplayNameFor(model => model.birimAd) <!-- display veri tabanındaki  birimAd sütünü yazdırmak için kullanıyourz   -->
+        </th>
+        <th> Aktif -Pasif </th>
+        <th>Güncelle </th>
+        <th> Pasif </th>
+        <th> Aktif </th>
+    </tr>
+
+    <!--  //  DisplayNameFor Sütünun adını getırıyordu display for ise içeriğini getircek -->
+    @foreach (var item in Model)
+    {
+        <tr class="text-center">
+            <td>
+                @Html.DisplayFor(modelItem => item.birimAd)
+            </td>
+            <td>
+                @((bool)item.aktiflik ? "aktif" : "pasif")
+            </td>
+            <td>
+                @Html.ActionLink("Güncelle", "Guncelle", new { id = item.birimId }, new { @class = "btn btn-success" })  <!-- hangi birimin güncellecğini bırımId de n bulcaz-->
+            </td>
+
+            <td>
+                @Html.ActionLink("Pasif", "Pasif", new { id = item.birimId }, new { @class = "btn btn-danger" })  <!-- hangi birimin güncellecğini bırımId de n bulcaz-->
+            </td>
+            <td>
+                @Html.ActionLink("Aktif", "Aktif", new { id = item.birimId }, new { @class = "btn btn-primary" })  <!-- hangi birimin güncellecğini bırımId de n bulcaz-->
+            </td>
+
+
+        </tr>
+    }
+</table>
+
+

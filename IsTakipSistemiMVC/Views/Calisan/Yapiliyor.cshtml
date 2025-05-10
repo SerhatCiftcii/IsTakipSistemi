@@ -1,0 +1,125 @@
+﻿@{
+    ViewBag.Title = "Yapılıyor";
+    Layout = "~/Views/Shared/_LayoutCalisan.cshtml";
+}
+<link href="https://stackpath.bootstrapcdn.com/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+
+<style>
+    body {
+        background-color: #F1F0E8; /* Sayfa arka plan rengi */
+    }
+
+    .card-header {
+        background-color: #EEE0C9; /* Card header arka plan rengi */
+        color: black; /* Card header metin rengi */
+    }
+</style>
+<div class="d-flex m-2 ">
+    <div class="card mb-2 mb-lg-0 me-2">
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item" style="background-color: #EEE0C9; color: black;">
+                <strong>Yapılmaya Başlanması Gereken İş Sayısı: @ViewBag.YapilmayıBekleyenİsSayisi</strong>
+            </li>
+        </ul>
+    </div>
+</div>
+
+<div class="container mt-2">
+    @if (ViewBag.Mesaj != null)
+    {
+        <div class="alert alert-info fw-bold">
+            @ViewBag.Mesaj
+        </div>
+    }
+
+    @using (Html.BeginForm("Yapiliyor", "Calisan", FormMethod.Get))
+    {
+        <div class="col-md-3 mb-0 me-4">
+            <label class="form-label"><strong>Aciliyet Seviyesine Göre İşleri Getir</strong></label>
+
+            <div class="d-flex align-items-center">
+                <div class="form-check me-2" style="color: #00ff21; min-width: 90px;">
+                    <input class="form-check-input" type="radio" name="aciliyetSeviyesi" id="exampleRadios1" value="Normal" @if (Request.QueryString["aciliyetSeviyesi"] == "Normal") { <text> </text> }>
+                    <label class="form-check-label" for="exampleRadios1">
+                        <strong> Normal </strong>
+                    </label>
+                </div>
+
+                <div class="form-check me-2" style="color: #ffd800; min-width: 70px;">
+                    <input class="form-check-input" type="radio" name="aciliyetSeviyesi" id="exampleRadios2" value="Acil" @if (Request.QueryString["aciliyetSeviyesi"] == "Acil") { <text> </text> }>
+                    <label class="form-check-label" for="exampleRadios2">
+                        <strong> Acil </strong>
+                    </label>
+                </div>
+
+                <div class="form-check me-2" style="color: #ff0000; min-width: 100px;">
+                    <input class="form-check-input" type="radio" name="aciliyetSeviyesi" id="exampleRadios3" value="Çok Acil" @if (Request.QueryString["aciliyetSeviyesi"] == "Çok Acil") { <text> </text> }>
+                    <label class="form-check-label" for="exampleRadios3">
+                        <strong> Çok Acil </strong>
+                    </label>
+                </div>
+
+                <button type="submit" class="btn btn-primary" style="margin-left: auto;">Filtrele</button>
+            </div>
+        </div>
+    }
+
+
+
+    <div class="row">
+        @foreach (var i in ViewBag.isler)
+        {
+            <div class="col-lg-6 col-md-6 col-sm-12 mb-4">
+                @using (Html.BeginForm("Yapiliyor", "Calisan", FormMethod.Post))
+                {
+                    <div class="card">
+                        <div class="card-header text-center fw-bold">
+                            @i.isBaslik -
+                            <span class="mb-1 ms-2">
+
+                                @if (i.AciliyetSeviyesi == "Normal")
+                                {
+                                    <span style="color: #00ff21;"> <strong>  @i.AciliyetSeviyesi </strong></span>
+                                }
+                                else if (i.AciliyetSeviyesi == "Acil")
+                                {
+                                    <span style="color: #ffd800;"> <strong>  @i.AciliyetSeviyesi </strong></span>
+                                }
+                                else if (i.AciliyetSeviyesi == "Çok Acil")
+                                {
+                                    <span style="color: #ff0000;">  <strong>  @i.AciliyetSeviyesi </strong> </span>
+                                }
+                            </span>
+                        </div>
+
+                        <div class="card-body">
+                            <input type="hidden" name="isId" value="@i.isId" />
+                            <div class="mb-2">
+                                <p class="mb-2"><strong>İş Açıklama:</strong> @i.isAciklama</p>
+                            </div>
+                            <div class="mb-2">
+                                <strong>İşin İletildiği Tarih:</strong> @i.iletilenTarih
+                            </div>
+                            <div class="mb-2">
+                                <strong>İşin Okunduğu Tarih:</strong> @(i.isOkunmaTarihi != null ? i.isOkunmaTarihi.ToString("dd MMMM yyyy HH:mm") : "Henüz Okunmadı İş")
+                            </div>
+                            <div class="mb-2">
+                                <div class="mb-2">
+                                    <strong>Yapılması Gereken Tarih:</strong> @i.YapilicakTarih
+                                </div>
+
+                                <!-- çalışanın yorum satırı -->
+                                <label for="yapiliyorisYorum" class="form-label"><i><strong> Yorum Giriniz </strong></i></label>
+                                <input type="text" class="form-control" id="yapiliyorisYorum" name="yapiliyorisYorum" />
+                            </div>
+                        </div>
+                        <div class="card-footer text-center">
+                            <button type="submit" name="actionType" value="Yapiliyor" class="btn btn-outline-success"><strong> Yapılıyor </strong></button>
+                        </div>
+                    </div>
+                    <br />
+                }
+            </div>
+        }
+    </div>
+</div>

@@ -1,5 +1,6 @@
+
 # IsTakipSistemi
-IsTakipSistemi asp.net project  Not:master branchde
+IsTakipSistemi asp.net project  
 
 # IsTakip Sistemi MVC
 
@@ -33,4 +34,7 @@ Projeyi çalıştırabilmek için **web.config** dosyasındaki **Connection Stri
        connectionString="metadata=res://*/Models.IsTakipModel.csdl|res://*/Models.IsTakipModel.ssdl|res://*/Models.IsTakipModel.msl;provider=System.Data.SqlClient;provider connection string=&quot;data source=YOUR_SERVER_NAME\SQLEXPRESS;initial catalog=IsTakipDB;integrated security=True;trustservercertificate=True;MultipleActiveResultSets=True;App=EntityFramework&quot;" 
        providerName="System.Data.EntityClient" />
 </connectionStrings>
+<<<<<<< HEAD
+=======
 
+>>>>>>> 91735801b25e524cdb8f88027678c54c2e582ed1

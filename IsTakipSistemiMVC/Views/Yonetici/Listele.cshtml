@@ -1,0 +1,99 @@
+﻿@{
+    ViewBag.Title = "Listele";
+    Layout = "~/Views/Shared/_LayoutYönetici.cshtml";
+}
+
+<head>
+    <link href="~/Content/Image.css" rel="stylesheet" />
+    <script src="~/Scripts/Image.js"></script>
+    <link href="~/Content/yonetici/Yonetici_ındex.css" rel="stylesheet" />
+
+</head>
+
+
+
+@if (ViewBag.isSayisi != 0)
+{
+    <div class="row mt-2">
+        @foreach (var i in ViewBag.isler)
+        {
+            <div class="col-lg-4 col-md-4 col-sm-8 mb-2">
+                <div class="card border-info" style="max-width: 100%; position: relative;">
+                    <div class="card-header text-center fw-bold">
+                        @i.isBaslik- 
+                        <span class="mb-1 ms-2">
+
+                            @if (i.AciliyetSeviyesi == "Normal")
+                            {
+                                <span style="color: #00ff21;"> <strong>  @i.AciliyetSeviyesi </strong></span>
+                            }
+                            else if (i.AciliyetSeviyesi == "Acil")
+                            {
+                                <span style="color: #ffd800;"> <strong>  @i.AciliyetSeviyesi </strong></span>
+                            }
+                            else if (i.AciliyetSeviyesi == "Çok Acil")
+                            {
+                                <span style="color: #ff0000;">  <strong>  @i.AciliyetSeviyesi </strong> </span>
+                            }
+                        </span>
+                    </div>
+                    <div class="card-body">
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item"><strong>İş Açıklama:</strong> @i.isAciklama</li>
+                            <li class="list-group-item"><strong>İletilen Tarih:</strong> @i.iletilenTarih.ToString("dd MMMM yyyy HH:mm")</li>
+                            <li class="list-group-item"><strong>İş Okunma Bilgisi:</strong> @(i.isOkunmaTarihi != null ? i.isOkunmaTarihi.ToString("dd MMMM yyyy HH:mm") : "Henüz Okunmadı İş")</li>
+                            <li class="list-group-item"><strong>Yapıma Başlandı:</strong> @(i.YapimaBaslama != null ? i.YapimaBaslama.ToString("dd MMMM yyyy HH:mm") : "Henüz Yapılmaya Başlanmadı")</li>
+                            <li class="list-group-item"><strong>İş Durumu:</strong> @i.Durumlar.durumAd</li>
+                            <li class="list-group-item"><strong>Yapılan Tarih:</strong> @(i.yapilanTarih != null ? i.yapilanTarih.ToString("dd MMMM yyyy HH:mm") : "Henüz Girilmedi")</li>
+                            <li class="list-group-item"><strong>Tamamlanan İşin Yorumu:</strong> @(i.isYorum != null ? i.isYorum : "Henüz Girilmedi")</li>
+                            <li class="list-group-item"><strong>Yapılıyor is yorumu</strong> @(i.yapiliyorisYorum != null ? i.yapiliyorisYorum : "Henüz Girilmedi")</li>
+                            <li class="list-group-item"><strong>Yapılması Geren Tarih:</strong> @i.YapilicakTarih</li>
+                           
+                            <li class="list-group-item">
+                                <strong>Fotoğraf:</strong>
+                                <!-- Eğer işin resmi varsa -->
+                                @if (i.Image != null && i.Image.Length > 0)
+                                {
+                                    <!-- Resmi Base64 formatına dönüştürdüm -->
+                                    var base64String = Convert.ToBase64String(i.Image);
+                                    var imageSrc = String.Format("data:image/jpeg;base64,{0}", base64String);
+                                    <img src="@imageSrc" alt="İş Fotoğrafı" class="img-thumbnail" onclick="openLargeImage(this.src)" />
+                                }
+                                else
+                                {
+                                    <!-- Fotoğraf mevcut değil mesajını yan yana göstermek için -->
+                                    <span class="no-photo-message">Fotoğraf mevcut değil.</span>
+                                }
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+}
+else
+{
+    <div class="alert alert-secondary text-center" role="alert">
+        <strong>Henüz İş Verilmedi</strong>
+    </div>
+}
+
+
+<!-- Büyük Resim Modal tıklayınca açma işlemi -->
+<div id="largeImageModal" class="img-large" onclick="closeLargeImage()">
+    <span class="close" onclick="closeLargeImage()">&times;</span>  <!-- Kapatma butonu -->
+    <img id="largeImage" src="" alt="Büyük İş Fotoğrafı" /> !-- Büyük resmi göster -->
+</div>
+
+<!-- ımage.jsde var ama buraya yazınca çalışıyor nedenını öğren ?-->
+<script>
+    function openLargeImage(src) {
+        document.getElementById('largeImage').src = src; // Büyük resmin kaynağını ayarla
+        document.getElementById('largeImageModal').style.display = 'block';  // Büyük resmi göster
+    }
+
+    function closeLargeImage() {
+        document.getElementById('largeImageModal').style.display = 'none'; // Büyük resmi gizle
+    }
+</script>
